@@ -1,0 +1,15 @@
+PROCEDURE is_palindrome(VAR mot : ARRAY_OF CHAR[length];)
+VAR
+    i  :INTEGER ;
+BEGIN
+    IF (mot[length] <=1) THEN
+        Return c est un palindrome
+    END_IF
+    FOR i FROM 0 TO length-1 DO
+        IF (mot[i] != mot[length-1-i]) THEN
+            Return ce n est pas un palindrome
+        ELSE
+            Return is_palindrome (mot[length], mot[i+1],mot[length-1-i])
+        END_IF
+    END_FOR
+END
